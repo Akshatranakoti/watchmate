@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'user_app',
+    'rest_framework.authtoken',
     'rest_framework',
     'watchlist_app',
     'django.contrib.admin',
@@ -132,7 +134,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # }
 
 REST_FRAMEWORK={
-    'DEFAULT_AUTHENTICATION_CLASSES':[
-     'rest_framework.authentication.BasicAuthentication',
+    # 'DEFAULT_AUTHENTICATION_CLASSES':[
+    #  'rest_framework.authentication.BasicAuthentication',
+    # ],
+     'DEFAULT_AUTHENTICATION_CLASSES':[
+     'rest_framework.authentication.TokenAuthentication',
     ]
 }
